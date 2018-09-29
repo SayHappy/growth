@@ -4,6 +4,7 @@ import (
 	"github.com/SayHappy/growth/helpers"
 	"github.com/SayHappy/growth/models"
 	"github.com/SayHappy/growth/servers"
+	"github.com/cihub/seelog"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -34,17 +35,20 @@ func SingUp(c *gin.Context) {
 	user := models.User{}
 	err := c.BindJSON(&user)
 	if err != nil {
+		seelog.Error(err)
 		c.JSON(http.StatusBadRequest, models.ResponseInfo{http.StatusBadRequest, "参数错误", nil})
 		return
 	}
-	//validMsg, validErr := servers.ValidUser(&user) // 验证字符格式
-	//if validErr != nil {
-	//	c.JSON(http.StatusBadRequest, models.ResponseInfo{http.StatusBadRequest, validMsg, nil})
-	//	return
-	//}
+	validMsg, validErr := servers.ValidUser(&user) // 验证字符格式
+	if validErr != nil {
+		seelog.Error(validErr)
+		c.JSON(http.StatusBadRequest, models.ResponseInfo{http.StatusBadRequest, validMsg, nil})
+		return
+	}
 	// 创建用户
 	createUserMsg, createUserErr := servers.CreateUser(&user)
 	if createUserErr != nil {
+		seelog.Error(createUserErr)
 		c.JSON(http.StatusAccepted, models.ResponseInfo{http.StatusAccepted, createUserMsg, nil})
 		return
 	}

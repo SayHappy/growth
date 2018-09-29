@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/SayHappy/growth/conf"
 	"github.com/garyburd/redigo/redis"
-	"github.com/jinzhu/gorm"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/jinzhu/gorm"
 )
 
 var DB *gorm.DB
@@ -17,7 +17,7 @@ func InitDB() error {
 		return err
 	}
 	DB = db
-	DB.AutoMigrate(&User{})
+	DB.AutoMigrate(&User{},&Exam{},&Examinee{},&Question{},&Paper{})
 
 	r, err := redis.Dial("tcp", conf.Configuration.Host+":"+conf.Configuration.RedisPort)
 	if err != nil {

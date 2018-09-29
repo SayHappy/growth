@@ -6,7 +6,6 @@ import (
 	"github.com/SayHappy/growth/conf"
 	"github.com/SayHappy/growth/helpers"
 	"github.com/SayHappy/growth/models"
-	"net/http"
 	"strconv"
 )
 
@@ -34,8 +33,8 @@ func ValidUser(user *models.User) (string, error) {
 	validCode, _ := models.Redis.Do("GET", telephone) // 设置过期时间
 	isPhone, _ := helpers.ValidPhone(telephone)
 	isPassword, _ := helpers.ValidPassword(password)
-	if !isPhone && !isPassword && code == "" && code != validCode {
-		return "账号密码格式有误", errors.New(string(http.StatusBadRequest))
+	if !isPhone || !isPassword || code == "" || code != validCode {
+		return "账号密码验证码格式有误", errors.New("账号密码验证码格式有误")
 	}
 	return "", nil
 }

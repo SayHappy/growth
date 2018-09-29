@@ -2,9 +2,9 @@ package conf
 
 import (
 	"flag"
+	"github.com/cihub/seelog"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
-	"github.com/cihub/seelog"
 )
 
 type SmsConf struct {
@@ -54,7 +54,6 @@ func InitConf() {
 	}
 	seelog.ReplaceLogger(logger)
 	defer seelog.Flush()
-
 
 	if err := LoadConfiguration(*configFilePath); err != nil {
 		return

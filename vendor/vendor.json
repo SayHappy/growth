@@ -33,6 +33,18 @@
 			"revisionTime": "2017-01-30T13:45:32Z"
 		},
 		{
+			"checksumSHA1": "2UmMbNHc8FBr98mJFN1k8ISOIHk=",
+			"path": "github.com/garyburd/redigo/internal",
+			"revision": "569eae59ada904ea8db7a225c2b47165af08735a",
+			"revisionTime": "2018-04-04T16:07:26Z"
+		},
+		{
+			"checksumSHA1": "3kM5bMyfqvdCfgQdOb01CR1aA74=",
+			"path": "github.com/garyburd/redigo/redis",
+			"revision": "569eae59ada904ea8db7a225c2b47165af08735a",
+			"revisionTime": "2018-04-04T16:07:26Z"
+		},
+		{
 			"checksumSHA1": "QeKwBtN2df+j+4stw3bQJ6yO4EY=",
 			"path": "github.com/gin-contrib/sse",
 			"revision": "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae",
@@ -61,6 +73,12 @@
 			"path": "github.com/gin-gonic/gin/render",
 			"revision": "f2cd3fcb2a9b4b108f5ce34a9f121ec13ac1cc16",
 			"revisionTime": "2018-09-20T03:53:58Z"
+		},
+		{
+			"checksumSHA1": "k9izYoyobR8Upb3Yjsw9htgE/Mk=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "99ff426eb706cffe92ff3d058e168b278cabf7c7",
+			"revisionTime": "2018-07-19T07:19:42Z"
 		},
 		{
 			"checksumSHA1": "GaJLoEuMGnP5ofXvuweAI4wx06U=",
@@ -107,6 +125,12 @@
 			"path": "github.com/modern-go/reflect2",
 			"revision": "f2cd3fcb2a9b4b108f5ce34a9f121ec13ac1cc16",
 			"revisionTime": "2018-09-20T03:53:58Z"
+		},
+		{
+			"checksumSHA1": "HdB4xDS5Fjua5RhBCeyeZgzR/g4=",
+			"path": "github.com/snluu/uuid",
+			"revision": "1dd34a9ad6c0e8dec93107f9c7425ea5713f78e1",
+			"revisionTime": "2013-03-06T16:26:36Z"
 		},
 		{
 			"checksumSHA1": "VpXSxFgHF41hNoKWHkE5Qy6WwmU=",
